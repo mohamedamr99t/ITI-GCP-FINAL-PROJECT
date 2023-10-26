@@ -5,18 +5,13 @@ provider "google" {
 
 #Creating Bucket File
 resource "google_storage_bucket" "statefile-backup" {
-  name          = "tfstate-backup"
+  name          = "iti-gcp-tfstate"
   location      = "US"
   force_destroy = true
 
   uniform_bucket_level_access = true
 
-  cors {
-    origin          = ["http://image-store.com"]
-    method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
-    response_header = ["*"]
-    max_age_seconds = 3600
-  }
+
 }
 
 module "network" {
@@ -32,7 +27,8 @@ module "compute" {
   network-subnet        = module.network.management_subnet
   service_account_email = module.iam.service_account-management-email
   tag                   = module.network.firewall
-  metadata_startup_script = var.metadata_startup_script
+  startup_script =  file("./startup.sh")
+
 }
 module "gke" {
   source                         = "./gke"

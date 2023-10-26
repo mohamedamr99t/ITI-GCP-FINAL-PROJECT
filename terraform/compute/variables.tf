@@ -21,7 +21,7 @@ variable "service_account_email" {
 variable "tag" {
   type = list(any)
 }
-variable "metadata_startup_script" {
+variable "startup_script" {
+  type = string
   description = "Startup script for GCP instance"
-  default     = file("${./startup.sh")
 }
