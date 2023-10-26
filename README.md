@@ -7,6 +7,8 @@ interacts with a highly available MongoDB (stateful) replicated across 3 zones
 and consisting of 1 primary and 2 secondaries.
 
 ![image](https://github.com/mohamedamr99t/ITI-GCP-FINAL-PROJECT/assets/139065575/cb1c221b-0aad-4071-bf50-e970a508f975)
+## TESTING THE PROJECT
+https://github.com/mohamedamr99t/ITI-GCP-FINAL-PROJECT/assets/139065575/4d21be47-24ce-4283-9c90-3137f94ebe66
 
 ## Infrastructure as Code (IaC) with Terraform 
 ### Terraform Project Structure
@@ -118,7 +120,6 @@ db.createUser(
 )
 ```
 
----
-## TESTING THE NODES AND USING LOADING BALANCER
-https://github.com/mohamedamr99t/ITI-GCP-FINAL-PROJECT/assets/139065575/4d21be47-24ce-4283-9c90-3137f94ebe66
+
+
 
