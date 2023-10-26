@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongodb
+spec:
+  selector:
+    matchLabels:
+      app: mongo
+  serviceName: "mongodb"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+        - name: mongodb 
+          image: us-central1-docker.pkg.dev/m-amr-project-one/cluster-storage/mongodb-image   
+          command:
+            - mongod
+            - "--bind_ip_all"
+            - --replSet
+            - "rs0"
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongo-volume
+              mountPath: /data/db
+            - name: mongodb-config
+              mountPath: /etc/mongo
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: user
+                  name: mongo-credentials
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: pass
+                  name: mongo-credentials  
+  volumeClaimTemplates:
+    - metadata:
+        name: mongo-volume
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: standard-rwo
+        resources:
+          requests:
+            storage: 2Gi

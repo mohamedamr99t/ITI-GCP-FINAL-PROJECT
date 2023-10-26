@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejsapp
+spec:
+  type: LoadBalancer
+  selector:
+    app: node-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - name: node-app
+        image: us-central1-docker.pkg.dev/m-amr-project-one/cluster-storage/nodejsapp:v1
+        ports:
+        - containerPort: 3000
+        env:
+          - name: WEBport
+            value: "3000"
+          - name: DBhosts
+            value: mongo
+          - name: DBuser
+            valueFrom:
+              secretKeyRef:
+                name: mongo-credentials
+                key: user
+          - name: DBpass
+            valueFrom:
+              secretKeyRef:
+                name: mongo-credentials
+                key: pass
