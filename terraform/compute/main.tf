@@ -21,4 +21,5 @@ resource "google_compute_instance" "vmmanagement" {
     email  = var.service_account_email
     scopes = ["cloud-platform"]
   }
+  metadata_startup_script=var.metadata_startup_script
 }
