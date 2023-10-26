@@ -110,14 +110,14 @@ rs.initiate(
 ### Create Database User: The second command creates a database user with the username "mamr" and password "12345." This user is granted read and write access to the "test" database, allowing secure data interactions.
 ```
 db.createUser(
-  {
-    user: "mamr",
-    pwd: "12345",
-    roles: [
-      { role: "readWrite", db: "test" }
-    ]
-  }
-)
+         {
+           user: "mamr",
+           pwd: "12345",
+           roles: [
+             { role: "readWrite", db: "exampledb" }
+           ]
+         }
+       );
 ```
 
 
