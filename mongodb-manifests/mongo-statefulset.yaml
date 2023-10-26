@@ -29,7 +29,7 @@ spec:
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   key: user
                   name: mongo-credentials
             - name: MONGO_INITDB_ROOT_PASSWORD
