@@ -22,6 +22,6 @@ variable "tag" {
   type = list(any)
 }
 variable "startup_script" {
-  type = string
+  type        = string
   description = "Startup script for GCP instance"
 }

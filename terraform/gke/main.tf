@@ -12,7 +12,7 @@ resource "google_container_cluster" "gke_cluster" {
       disabled = false
     }
   }
-deletion_protection = false
+  deletion_protection = false
   node_config {
     service_account = var.service_account_email
     oauth_scopes = [
@@ -20,7 +20,7 @@ deletion_protection = false
       "https://www.googleapis.com/auth/devstorage.read_write"
     ]
 
-    machine_type = "e2-small" 
+    machine_type = "e2-small"
     disk_size_gb = 10
   }
   master_authorized_networks_config {
