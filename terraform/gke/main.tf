@@ -6,6 +6,7 @@ resource "google_container_cluster" "gke_cluster" {
   network            = var.network-subnet.network
   subnetwork         = var.network-subnet.name
 
+
   addons_config {
     http_load_balancing {
       disabled = false
@@ -13,12 +14,13 @@ resource "google_container_cluster" "gke_cluster" {
   }
 deletion_protection = false
   node_config {
+    service_account = var.service_account_email
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform",
       "https://www.googleapis.com/auth/devstorage.read_write"
     ]
 
-    machine_type = "e2-small"
+    machine_type = "e2-small" 
     disk_size_gb = 10
   }
   master_authorized_networks_config {
