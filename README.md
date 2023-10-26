@@ -25,6 +25,13 @@ In this structure:
 - `variables.tf` files within each module describe input variables used by that module.
 - The root directory contains project-wide `main.tf` and `variables.tf` files for global configurations.
 - The `terraform.tfvars` file allows you to assign values to the input variables defined in your project.
+- 
+## Utilizing Google Cloud Storage for Terraform Remote State Management
+
+In this project, I have implemented Google Cloud Storage as the remote backend for efficient Terraform state file management. This choice enhances security and optimizes infrastructure management.
+
+![image](https://github.com/mohamedamr99t/ITI-GCP-FINAL-PROJECT/assets/139065575/f34270b2-f1d3-44dd-9ab2-a946f693d414)
+
 
 # Applying Infrastructure with Terraform
 
