@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mongodb 
-          image: us-central1-docker.pkg.dev/m-amr-project-one/cluster-storage/mongodb-image   
+          image: us-central1-docker.pkg.dev/m-amr-project-one/cluster-storage/mongodb-image:v1   
           command:
             - mongod
             - "--bind_ip_all"
