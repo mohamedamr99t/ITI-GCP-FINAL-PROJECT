@@ -120,3 +120,4 @@ db.createUser(
 
 ---
 ## TESTING THE NODES AND USING LOAD BALANCING
+[Watch Video Tutorial](https://youtu.be/YSrwmLX925A)
