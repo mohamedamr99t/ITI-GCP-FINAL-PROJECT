@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "bucket-final-gcp" {
-  name          = "bucket-demo-iti"
+  name          = "bucket-final-gcp"
   location      = "EU"
   force_destroy = true
 
