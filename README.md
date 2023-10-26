@@ -1,5 +1,4 @@
-# ITI-GCP-FINAL-PROJECT
-### GCP ITI Project
+# GCP ITI Project
 This project will assess your Google Cloud, Networking, DB, Development,
 Terraform, Docker, and Kubernetes skills.
 In this project you will deploy a simple Node.js web application (stateless) that
