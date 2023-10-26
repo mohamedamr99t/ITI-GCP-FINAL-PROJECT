@@ -54,6 +54,19 @@ Follow these steps to apply and manage your infrastructure using Terraform:
   
            terraform destroy 
 
+## `my_script.sh`: VM Management and Environment Setup
+
+Execute the `my_script.sh` script to facilitate VM management and environment setup. It automates system updates, Docker installation, and user configuration, preparing your environment for the Terraform project. After running the script, proceed with VM management tasks.
+
+``` #!/bin/bash
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install -y
+sudo apt install docker.io docker docker-clean containerd docker-registry
+sudo groupadd docker
+sudo usermod -aG docker $USER
+```
+
 By following these steps, you can effectively work with your infrastructure as code using Terraform. For further details and advanced usage, please refer to the comprehensive Terraform documentation.
 
 ---
