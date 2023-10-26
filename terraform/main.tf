@@ -3,6 +3,22 @@ provider "google" {
   region  = "us-central1"
 }
 
+#Creating Bucket File
+resource "google_storage_bucket" "statefile-backup" {
+  name          = "tfstate-backup"
+  location      = "US"
+  force_destroy = true
+
+  uniform_bucket_level_access = true
+
+  cors {
+    origin          = ["http://image-store.com"]
+    method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
+    response_header = ["*"]
+    max_age_seconds = 3600
+  }
+}
+
 module "network" {
   source        = "./network"
   ip_cidr_range = var.ip_cidr_range
