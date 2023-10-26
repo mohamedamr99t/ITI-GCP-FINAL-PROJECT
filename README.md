@@ -119,5 +119,6 @@ db.createUser(
 ```
 
 ---
-## TESTING THE NODES AND USING LOAD BALANCING
-[Watch Video Tutorial](https://youtu.be/YSrwmLX925A)
+## TESTING THE NODES AND USING LOADING BALANCER
+https://github.com/mohamedamr99t/ITI-GCP-FINAL-PROJECT/assets/139065575/4d21be47-24ce-4283-9c90-3137f94ebe66
+
