@@ -99,6 +99,8 @@ After cloning *( mongodb-manifests )* to your machine, follow these steps :
 ### By navigating the directory *( mongodb-manifests )* , you can use one command to apply Kubernetes resources defined in the directory
 <pre> kubectl apply -f . </pre>
 OR 
+sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+gcloud container clusters get-credentials my-cluster --region asia-east1 --project m-amr-project-one
 <pre>kubectl apply -f app-deployment.yaml
 kubectl apply -f mongo-services.yaml
 kubectl apply -f mongo-secret.yaml
