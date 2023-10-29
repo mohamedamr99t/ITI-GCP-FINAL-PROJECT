@@ -3,16 +3,6 @@ provider "google" {
   region  = "us-central1"
 }
 
-#Creating Bucket File
-resource "google_storage_bucket" "statefile-backup" {
-  name          = "iti-gcp-tfstate"
-  location      = "US"
-  force_destroy = true
-
-  uniform_bucket_level_access = true
-
-
-}
 resource "google_storage_bucket" "bucket-final-gcp" {
   name          = "bucket-demo-iti"
   location      = "EU"
