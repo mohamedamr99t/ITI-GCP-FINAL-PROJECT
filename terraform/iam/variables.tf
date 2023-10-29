@@ -97,8 +97,6 @@ variable "permissions-roles-management" {
 variable "permissions-roles-gke" {
   type = list(string)
   default = [
-    "artifactregistry.dockerimages.get",
-    "artifactregistry.dockerimages.list",
     "artifactregistry.repositories.downloadArtifacts",
     "artifactregistry.repositories.get",
     "artifactregistry.repositories.list"
