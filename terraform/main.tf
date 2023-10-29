@@ -3,13 +3,6 @@ provider "google" {
   region  = "us-central1"
 }
 
-resource "google_storage_bucket" "bucket-final-gcp" {
-  name          = "bucket-final-gcp"
-  location      = "EU"
-  force_destroy = true
-
-  uniform_bucket_level_access = false
-}
 terraform {
   backend "gcs" {
     bucket = "bucket-final-gcp"
